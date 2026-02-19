@@ -23,13 +23,14 @@ export default function Mms() {
                 </div>
             </section>
 
-            {/* MMS About Placeholder */}
             <section id="about" className="about-section">
                 <div className="container">
-                    <h2 className="section-title">About MMS</h2>
-                    <p className="section-subtitle">Innovating at the intersection of maritime engineering and AI.</p>
+                    <h2 className="section-title">Institutional Overview</h2>
+                    <p className="section-subtitle">Redefining maritime operations.</p>
                     <div style={{ textAlign: 'center', padding: '4rem 0' }}>
-                        <p style={{ color: 'var(--text-secondary)' }}>MMS is exploring next-gen naval solutions. Full specifications will be released in late 2026.</p>
+                        <p style={{ color: 'var(--text-tertiary)', fontSize: '1.2rem', fontStyle: 'italic' }}>
+                            [ Under research and development ]
+                        </p>
                     </div>
                 </div>
             </section>

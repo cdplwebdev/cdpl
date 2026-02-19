@@ -21,9 +21,9 @@ export default function Contact() {
 
                     <div className="about-stats">
                         <form className="contact-form" style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                            <input type="text" placeholder="Name" className="hacker-input" style={{ background: 'rgba(0, 255, 157, 0.05)', border: '1px solid var(--primary)', padding: '1rem', color: 'white' }} />
-                            <input type="email" placeholder="Email" className="hacker-input" style={{ background: 'rgba(0, 255, 157, 0.05)', border: '1px solid var(--primary)', padding: '1rem', color: 'white' }} />
-                            <textarea placeholder="Message" rows="4" className="hacker-input" style={{ background: 'rgba(0, 255, 157, 0.05)', border: '1px solid var(--primary)', padding: '1rem', color: 'white' }}></textarea>
+                            <input type="text" placeholder="Name" className="hacker-input" style={{ background: 'rgba(0, 57, 166, 0.02)', border: '1px solid var(--border-color)', padding: '1rem', color: 'var(--text-primary)' }} />
+                            <input type="email" placeholder="Email" className="hacker-input" style={{ background: 'rgba(0, 57, 166, 0.02)', border: '1px solid var(--border-color)', padding: '1rem', color: 'var(--text-primary)' }} />
+                            <textarea placeholder="Message" rows="4" className="hacker-input" style={{ background: 'rgba(0, 57, 166, 0.02)', border: '1px solid var(--border-color)', padding: '1rem', color: 'var(--text-primary)' }}></textarea>
                             <button type="submit" className="btn btn-primary" style={{ alignSelf: 'flex-start' }}>Send Signal</button>
                         </form>
                     </div>

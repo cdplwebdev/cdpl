@@ -23,13 +23,14 @@ export default function Mgs() {
                 </div>
             </section>
 
-            {/* MGS About Placeholder */}
             <section id="about" className="about-section">
                 <div className="container">
-                    <h2 className="section-title">About MGS</h2>
-                    <p className="section-subtitle">Developing the future of autonomous land mobility.</p>
+                    <h2 className="section-title">Institutional Overview</h2>
+                    <p className="section-subtitle">Pioneering terrestrial autonomy.</p>
                     <div style={{ textAlign: 'center', padding: '4rem 0' }}>
-                        <p style={{ color: 'var(--text-secondary)' }}>MGS is currently in the late-stage R&D phase. Stay tuned for official product unveilings.</p>
+                        <p style={{ color: 'var(--text-tertiary)', fontSize: '1.2rem', fontStyle: 'italic' }}>
+                            [ Under research and development ]
+                        </p>
                     </div>
                 </div>
             </section>

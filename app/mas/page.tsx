@@ -9,56 +9,79 @@ export default function Mas() {
         <div className="mas-page">
             <Navbar />
 
-            {/* MAS Hero */}
-            <section className="hero-section mas-hero">
-                <div className="hero-overlay"></div>
-                <div className="container hero-content">
-                    <span className="overline">AUTONOMOUS DEFENSE</span>
-                    <h1>MAJOR AEROSPACE <br className="hero-break" /> <span className="highlight">SYSTEMS</span></h1>
-                    <p>Strategic Aerial Autonomy. Relentless Precision. <br /> We are designing next-decade aerospace solutions — from high-altitude surveillance to autonomous tactical logistics.</p>
-                    <div className="hero-actions">
-                        <Link href="#about" className="btn btn-primary">Institutional Overview</Link>
-                        <Link href="#products" className="btn btn-outline">Operational Platforms</Link>
+            {/* MAS Header Section */}
+            <section className="mas-header">
+                <div className="container" style={{ width: '100%', maxWidth: 'none', margin: '0' }}>
+                    <div className="mas-logo-container">
+                        <img
+                            src="/partners/mas-logo.png"
+                            alt="Major Aerospace Systems"
+                            className="mas-main-logo"
+                        />
                     </div>
                 </div>
             </section>
 
-            {/* MAS About */}
-            <section id="about" className="about-section">
+            {/* Cinematic Mission Section */}
+            <section className="mas-hero-content" style={{ marginTop: '0', padding: '1rem 4rem' }}>
                 <div className="container">
-                    <h2 className="section-title">Institutional Overview</h2>
-                    <p className="section-subtitle">A strategic leader in indigenous autonomous systems.</p>
+                    <h2 style={{
+                        fontSize: 'max(28px, 3vw)',
+                        color: 'var(--text-primary)',
+                        marginBottom: '1.5rem',
+                        lineHeight: '1.1',
+                        maxWidth: '900px',
+                        fontWeight: '900',
+                        letterSpacing: '-1px'
+                    }}>
+                        REDEFINING DEFENSE WITH <br />
+                        <span style={{ color: 'var(--accent-primary)' }}>INTELLIGENT AIRPOWER.</span>
+                    </h2>
 
-                    <div className="about-content">
-                        <div className="about-text">
-                            <h4>INDIGENOUS INNOVATION · GLOBAL IMPACT</h4>
-                            <p>
-                                Major Aerospace Systems (MAS) stands at the forefront of aerospace innovation. With a strong foundation in precision engineering and high-altitude flight dynamics, MAS pioneers the design, advanced manufacturing, and deployment of next-generation autonomous platforms.
+                    <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                        gap: '2.5rem',
+                        maxWidth: '1200px',
+                        textAlign: 'left',
+                        marginBottom: '2rem'
+                    }}>
+                        <div className="mission-para" style={{ borderLeft: '2px solid var(--accent-primary)', paddingLeft: '1.5rem' }}>
+                            <p style={{ fontSize: '1rem', lineHeight: '1.6', color: 'var(--text-secondary)' }}>
+                                <strong style={{ color: 'var(--text-primary)' }}>Major Aerospace Systems (MAS)</strong> — a Bharat-rooted global leader — stands at the forefront of innovation in aerospace and autonomous defense technology. We pioneer the design and deployment of next-generation platforms and intelligent multi-domain technologies.
                             </p>
-                            <p>
-                                Through strategic indigenous innovation and a commitment to self-reliance, we deliver tactical systems that are mission-ready and future-proof — enabling sovereign forces to protect their interests with unyielding precision.
-                            </p>
-
-                            <div className="about-stats" style={{ marginTop: '2rem' }}>
-                                <div className="stat-card">
-                                    <h3>2+</h3>
-                                    <p>Years of R&D</p>
-                                </div>
-                                <div className="stat-card">
-                                    <h3>100%</h3>
-                                    <p>Indigenous Tech</p>
-                                </div>
-                            </div>
                         </div>
+                        <div className="mission-para">
+                            <p style={{ fontSize: '1rem', lineHeight: '1.6', color: 'var(--text-secondary)' }}>
+                                Our solutions are engineered for high-impact defense across <span style={{ color: 'var(--accent-primary)', fontWeight: '600' }}>land, sea, air, and space</span>. MAS is redefining the future of national security, enabling partners to protect sovereign interests with precision and confidence.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                        <div className="about-stats">
-                            <div className="stat-card">
-                                <h3>Tier 1</h3>
-                                <p>Strategic Partners</p>
-                            </div>
-                            <div className="stat-card">
-                                <h3>MIL-STD</h3>
-                                <p>Rugged Systems</p>
+            <section id="partners" className="about-section" style={{ borderTop: '1px solid var(--border-color)', paddingBottom: '2rem' }}>
+                <div className="container">
+                    {/* Partner Section */}
+                    <div className="partners-section" style={{ marginTop: '1.5rem' }}>
+                        <h4 style={{ textAlign: 'center', marginBottom: '3rem', fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--text-tertiary)', letterSpacing: '2px' }}>STRATEGIC PARTNERSHIPS</h4>
+                        <div style={{ display: 'flex', justifyContent: 'center' }}>
+                            <div className="partner-logo-grid" style={{
+                                display: 'flex',
+                                gap: '5rem',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                flexWrap: 'wrap'
+                            }}>
+                                <div className="partner-logo-item" style={{ width: '140px', display: 'flex', justifyContent: 'center' }}>
+                                    <img src="/partners/d1.png" alt="Indian Army" style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
+                                </div>
+                                <div className="partner-logo-item" style={{ width: '140px', display: 'flex', justifyContent: 'center', opacity: 0.2 }}>
+                                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem' }}>PARTNER_02</div>
+                                </div>
+                                <div className="partner-logo-item" style={{ width: '140px', display: 'flex', justifyContent: 'center', opacity: 0.2 }}>
+                                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem' }}>PARTNER_03</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -71,62 +94,89 @@ export default function Mas() {
                     <h2 className="section-title">MAS Product Line</h2>
                     <p className="section-subtitle">Tactical Solutions for the Modern Battlefield.</p>
 
-                    <div className="products-grid">
+                    <div className="product-carousel-container">
+                        <div className="product-carousel">
+                            {[
+                                {
+                                    id: 'bard',
+                                    name: 'BARD Family',
+                                    nickname: 'SENTINEL',
+                                    type: 'RECON/ISR',
+                                    tagline: 'QUADCOPTER ISR',
+                                    desc: 'Strategic quadcopter family supporting Day/Thermal ISR, LRF, and tactical payload delivery.',
+                                    imgClass: 'product-image-bard',
+                                    link: '/products/bard'
+                                },
+                                {
+                                    id: 'horizon-vtol',
+                                    name: 'HORIZON VTOL',
+                                    nickname: 'OBSERVER',
+                                    type: 'LONG RANGE ISR',
+                                    tagline: 'FIXED WING VTOL',
+                                    desc: 'Vertical Take-Off fixed-wing platform offering 40m endurance and stabilized 3-axis imagery.',
+                                    imgClass: 'product-image-aot',
+                                    link: '/products/horizon-vtol'
+                                },
+                                {
+                                    id: 'horizon-fpv',
+                                    name: 'HORIZON FPV',
+                                    nickname: 'SIMULATE',
+                                    type: 'ADVANCED TRAINER',
+                                    tagline: 'FIXED WING FPV',
+                                    desc: 'Large-scale 1645mm wingspan trainer for high-speed area familiarization and FPV training.',
+                                    imgClass: 'product-image-sim',
+                                    link: '/products/horizon-fpv'
+                                },
+                                {
+                                    id: 'stinger',
+                                    name: 'STINGER Family',
+                                    nickname: 'HYDRA V4',
+                                    type: 'TACTICAL STRIKE',
+                                    tagline: 'FPV KAMIKAZE',
+                                    desc: 'Expendable high-performance quads (7-15") for precision intercept and heavy payload strike.',
+                                    imgClass: 'product-image-hydra',
+                                    link: '/products/stinger'
+                                },
+                                {
+                                    id: 'aot',
+                                    name: 'AOT (7 Inch)',
+                                    nickname: 'TRAINER',
+                                    type: 'PILOT TRAINING',
+                                    tagline: 'QUADCOPTER TRAINER',
+                                    desc: 'Shatter-resistant trainer with integrated prop guards and zero-latency feedback for new pilots.',
+                                    imgClass: 'product-image-aot',
+                                    link: '/products/aot'
+                                }
+                            ].map((product) => (
+                                <div className="product-carousel-item" key={product.id}>
+                                    <div className="product-card">
+                                        <span className="corner corner-tl"></span>
+                                        <span className="corner corner-tr"></span>
+                                        <span className="corner corner-bl"></span>
+                                        <span className="corner corner-br"></span>
 
-                        {/* Product 1 */}
-                        <div className="product-card">
-                            <span className="corner corner-tl"></span>
-                            <span className="corner corner-tr"></span>
-                            <span className="corner corner-bl"></span>
-                            <span className="corner corner-br"></span>
+                                        <div className={`product-image ${product.imgClass}`}>
+                                            <div className="product-type-badge">{product.type}</div>
 
-                            <div className="product-image product-image-aot">
-                                <div className="product-type-badge">TRAINER</div>
-                            </div>
-                            <div className="product-content">
-                                <span className="product-tagline">SURVEILLANCE & TRAINING</span>
-                                <h3>Aerial Observation Trainer</h3>
-                                <p>Made-in-India rugged drone for surveillance and pilot training, with strong follow-on orders after initial Indian Army success.</p>
-                                <a href="#" className="btn-text">View Specifications &rarr;</a>
-                            </div>
+                                            {/* Image Slot moved here - near nickname */}
+                                            <div className="product-card-image-slot">
+                                                [ Product {product.nickname} Asset ]
+                                            </div>
+
+                                            <div style={{ position: 'absolute', bottom: '1rem', left: '1rem', color: 'rgba(255,255,255,0.4)', fontFamily: 'var(--font-mono)', fontSize: '0.6rem', letterSpacing: '2px' }}>
+                                                NICKNAME: {product.nickname}
+                                            </div>
+                                        </div>
+                                        <div className="product-content">
+                                            <span className="product-tagline">{product.tagline}</span>
+                                            <h3>{product.name}</h3>
+                                            <p>{product.desc}</p>
+                                            <Link href={product.link} className="btn-text">View Specifications &rarr;</Link>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
-
-                        {/* Product 2 */}
-                        <div className="product-card">
-                            <span className="corner corner-tl"></span>
-                            <span className="corner corner-tr"></span>
-                            <span className="corner corner-bl"></span>
-                            <span className="corner corner-br"></span>
-
-                            <div className="product-image product-image-bard">
-                                <div className="product-type-badge">RECON</div>
-                            </div>
-                            <div className="product-content">
-                                <span className="product-tagline">TACTICAL AUTONOMY</span>
-                                <h3>Battlefield Artillery Recon Drone</h3>
-                                <p>A tactical, autonomous drone built for real-time surveillance, target acquisition, and post-strike damage assessment.</p>
-                                <a href="#" className="btn-text">View Specifications &rarr;</a>
-                            </div>
-                        </div>
-
-                        {/* Product 3 */}
-                        <div className="product-card">
-                            <span className="corner corner-tl"></span>
-                            <span className="corner corner-tr"></span>
-                            <span className="corner corner-bl"></span>
-                            <span className="corner corner-br"></span>
-
-                            <div className="product-image product-image-tdfs">
-                                <div className="product-type-badge">SIMULATOR</div>
-                            </div>
-                            <div className="product-content">
-                                <span className="product-tagline">WAR-GAMING</span>
-                                <h3>Tactical Drone Flying Simulator</h3>
-                                <p>A hyper-realistic drone piloting and war-gaming simulator featuring onboard compute and high-resolution immersive visuals.</p>
-                                <a href="#" className="btn-text">View Specifications &rarr;</a>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </section>
