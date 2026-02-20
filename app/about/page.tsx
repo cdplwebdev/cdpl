@@ -4,6 +4,20 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { useState, useEffect } from 'react';
 
+const IndiaFlag = () => (
+    <svg width="28" height="20" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: '8px', borderRadius: '3px', transform: 'translateY(-2px)' }}>
+        <path fill="#FF9933" d="M0 0h900v200H0z" />
+        <path fill="#FFFFFF" d="M0 200h900v200H0z" />
+        <path fill="#138808" d="M0 400h900v200H0z" />
+        <circle cx="450" cy="300" r="80" fill="#000080" />
+        <circle cx="450" cy="300" r="60" fill="#FFFFFF" />
+        <circle cx="450" cy="300" r="12" fill="#000080" />
+        {[...Array(24)].map((_, i) => (
+            <line key={i} x1="450" y1="300" x2="450" y2="220" stroke="#000080" strokeWidth="10" transform={`rotate(${i * 15} 450 300)`} />
+        ))}
+    </svg>
+);
+
 export default function AboutPage() {
     const [isVisible, setIsVisible] = useState(false);
 
@@ -94,6 +108,7 @@ export default function AboutPage() {
                     </h1>
 
                     <p style={{ fontSize: '1.4rem', color: 'var(--text-secondary)', maxWidth: '850px', lineHeight: '1.4' }}>
+                        <IndiaFlag />
                         India’s first <span style={{ color: 'var(--text-primary)', fontWeight: '700' }}>Physical Intelligence</span> company. We build autonomous AI systems that perceive, reason, and act in the physical world to protect India and empower tactical operations across all domains.
                     </p>
                 </div>

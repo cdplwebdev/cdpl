@@ -9,46 +9,53 @@ const HackerLink = ({ href, text, children, className = "", isActive = false }) 
     const intervalRef = useRef(null);
     const chars = "01";
 
+    useEffect(() => {
+        setDisplayText(text);
+    }, [text]);
+
     const startScramble = () => {
         let iteration = 0;
-
-        // Clear any existing interval
         if (intervalRef.current) clearInterval(intervalRef.current);
 
         intervalRef.current = setInterval(() => {
             setDisplayText(prev =>
-                text
-                    .split("")
-                    .map((letter, index) => {
-                        if (index < iteration) {
-                            return text[index];
-                        }
-                        return chars[Math.floor(Math.random() * chars.length)];
-                    })
-                    .join("")
+                text.split("").map((letter, index) => {
+                    if (index < iteration) return text[index];
+                    return chars[Math.floor(Math.random() * chars.length)];
+                }).join("")
             );
-
             if (iteration >= text.length) {
                 clearInterval(intervalRef.current);
                 setDisplayText(text);
             }
-
             iteration += 1 / 3;
         }, 30);
     };
 
     const handleMouseEnter = () => {
-        startScramble();
+        // Disable scramble on mobile
+        if (typeof window !== 'undefined' && window.innerWidth > 992) {
+            startScramble();
+        }
     };
 
     return (
         <Link href={href} className={`hacker-link ${className} ${isActive ? 'active' : ''}`} onMouseEnter={handleMouseEnter}>
             <span className="hacker-text">{displayText}</span>
+            <span className="static-text">{text}</span>
             {children}
             <span className="corner corner-tl"></span>
             <span className="corner corner-tr"></span>
             <span className="corner corner-bl"></span>
             <span className="corner corner-br"></span>
+            <style jsx>{`
+                .static-text { display: none; }
+                @media (max-width: 992px) {
+                    .static-text { display: inline-block !important; color: #0a0b0d !important; width: 100%; text-align: center; }
+                    .hacker-text { display: none !important; }
+                    .corner { display: none !important; }
+                }
+            `}</style>
         </Link>
     );
 };
@@ -201,7 +208,8 @@ const Navbar = () => {
                     border: none;
                     cursor: pointer;
                     padding: 0;
-                    z-index: 1001;
+                    padding: 0;
+                    z-index: 2001;
                 }
 
                 .bar {
@@ -209,6 +217,11 @@ const Navbar = () => {
                     height: 2px;
                     background-color: ${(scrolled || !hasDarkHero || isMobileMenuOpen) ? 'var(--text-primary)' : '#fff'};
                     transition: all 0.3s ease;
+                }
+
+                /* Force dark cross on white mobile menu */
+                .mobile-toggle.active .bar {
+                    background-color: var(--text-primary) !important;
                 }
 
                 .mobile-toggle.active .bar:nth-child(1) {
@@ -231,32 +244,64 @@ const Navbar = () => {
                     .nav-links {
                         position: fixed;
                         top: 0;
-                        right: -100%;
-                        width: 80%;
+                        right: 0;
+                        width: 85%;
                         height: 100vh;
-                        background: #fff;
+                        background: #ffffff !important;
+                        display: flex !important;
                         flex-direction: column;
                         align-items: center;
-                        justify-content: center;
-                        gap: 2rem;
-                        transition: 0.4s ease;
-                        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-                        z-index: 1000;
-                        padding: 2rem;
+                        justify-content: flex-start;
+                        gap: 1.5rem; /* Reduced gap from 2rem */
+                        transform: translateX(100%);
+                        transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+                        box-shadow: -10px 0 40px rgba(0,0,0,0.15);
+                        z-index: 2000;
+                        padding: 7rem 2rem 4rem; /* Adjusted top padding */
                         overflow-y: auto;
+                        opacity: 1;
                     }
 
                     .nav-links.show {
-                        right: 0;
+                        transform: translateX(0) !important;
                     }
 
                     :global(.navbar.solid .nav-links) {
                         background: #fff;
                     }
 
-                    :global(.hacker-link) {
-                        color: var(--text-primary) !important;
-                        font-size: 1.2rem !important;
+                    .nav-links .hacker-link {
+                         color: #0a0b0d !important;
+                         font-size: 1.25rem !important;
+                         width: 100%;
+                         text-align: center;
+                         height: auto !important;
+                         min-height: 40px; /* Reduced specific height */
+                         padding: 0.5rem 0; /* Reduced padding */
+                         display: flex !important;
+                         justify-content: center;
+                         align-items: center;
+                         position: relative;
+                         opacity: 1 !important;
+                         margin: 0;
+                    }
+                    
+                    .nav-links .hacker-link .hacker-text {
+                        color: #0a0b0d !important;
+                        display: inline-block !important;
+                        opacity: 1 !important;
+                        position: relative;
+                        z-index: 10;
+                        min-width: 50px;
+                    }
+
+
+                    .dropdown {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        margin: 0;
                     }
 
                     .dropdown-content {
@@ -264,19 +309,83 @@ const Navbar = () => {
                         box-shadow: none;
                         background: transparent;
                         padding: 0;
-                        margin-top: 1rem;
+                        margin-top: 0.5rem;
                         display: flex;
                         flex-direction: column;
                         align-items: center;
-                    }
-
-                    .mega-menu {
-                        display: none; /* Hide complex mega menu on mobile for now, or simplify */
+                        gap: 0.5rem;
                     }
                     
-                    /* Simple view all links instead of mega menu */
-                    .dropdown:hover .mega-menu {
-                        display: none;
+                    .dropdown-content a {
+                        font-size: 0.9rem;
+                        color: #555;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                    }
+
+                    /* Mega Menu Mobile Styles */
+                    .mega-menu {
+                        display: flex !important; /* Enable on mobile */
+                        position: static;
+                        box-shadow: none;
+                        background: transparent;
+                        padding: 0;
+                        margin-top: 0.5rem;
+                        width: 100%;
+                        opacity: 1 !important;
+                        visibility: visible !important;
+                        border: none;
+                    }
+
+                    .mega-menu-container {
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+                        gap: 0.5rem;
+                        padding: 0;
+                    }
+
+                    .mega-column {
+                        border: none !important;
+                        padding: 0 !important;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        width: 100%;
+                    }
+
+                    /* Style the Mega Headers (MAS, MGS, MMS) */
+                    .mega-header {
+                        display: block !important;
+                        margin-bottom: 0.25rem !important;
+                        padding: 0.5rem !important;
+                        text-align: center;
+                    }
+                    
+                    /* Hide images in mobile menu to keep it clean */
+                    .mega-header img, 
+                    .mega-header div[style*="background"] { 
+                         display: none !important; 
+                    }
+                    
+                    .mega-category {
+                        font-family: var(--font-mono); /* Use font-mono for sub-links */
+                        font-size: 0.9rem;
+                        color: #555 !important; /* Dark grey for contrast */
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        display: block;
+                    }
+
+                    /* Hide specific sub-links and descriptions on mobile to reduce clutter */
+                    .mega-links {
+                        display: none !important;
+                    }
+                    
+                    /* Show corners on hover for desktop only */
+                    .nav-links .hacker-link:hover,
+                    .nav-links .hacker-link:hover .hacker-text {
+                         color: var(--accent-primary) !important;
                     }
 
                     .nav-btn {
@@ -284,8 +393,17 @@ const Navbar = () => {
                         margin-top: 1rem;
                     }
                 }
+                @media (max-width: 768px) {
+                    .nav-container {
+                        padding: 1rem 1.5rem !important;
+                    }
+                    .nav-logo {
+                        max-width: 140px !important;
+                        height: auto;
+                    }
+                }
             `}</style>
-        </nav >
+        </nav>
     );
 };
 

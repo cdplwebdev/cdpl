@@ -3,8 +3,23 @@
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import Link from 'next/link';
+import { useRef } from 'react';
 
 export default function Mas() {
+    const carouselRef = useRef<HTMLDivElement>(null);
+
+    const scrollCarousel = (direction: 'left' | 'right') => {
+        if (carouselRef.current) {
+            const { current } = carouselRef;
+            const scrollAmount = 350;
+            if (direction === 'left') {
+                current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            } else {
+                current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        }
+    };
+
     return (
         <div className="mas-page">
             <Navbar />
@@ -91,11 +106,12 @@ export default function Mas() {
             {/* MAS Products */}
             <section id="products" className="products-section">
                 <div className="container">
-                    <h2 className="section-title">MAS Product Line</h2>
-                    <p className="section-subtitle">Tactical Solutions for the Modern Battlefield.</p>
+                    <div className="product-carousel-header" style={{ marginBottom: '2rem' }}>
+                        <h2 className="section-title" style={{ margin: 0, textAlign: 'left' }}>OUR PRODUCTS</h2>
+                    </div>
 
                     <div className="product-carousel-container">
-                        <div className="product-carousel">
+                        <div className="product-carousel" ref={carouselRef}>
                             {[
                                 {
                                     id: 'bard',
@@ -178,10 +194,102 @@ export default function Mas() {
                             ))}
                         </div>
                     </div>
+
+                    <div className="carousel-controls" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '2rem' }}>
+                        <button
+                            onClick={() => scrollCarousel('left')}
+                            className="nav-arrow-btn"
+                            aria-label="Scroll Left"
+                            style={{
+                                background: 'transparent',
+                                border: '1px solid var(--accent-primary)',
+                                color: 'var(--accent-primary)',
+                                width: '40px',
+                                height: '40px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                cursor: 'pointer',
+                                transition: 'all 0.3s ease',
+                                fontSize: '1.2rem'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.background = 'var(--accent-primary)';
+                                e.currentTarget.style.color = '#fff';
+                                e.currentTarget.style.transform = 'scale(1.1)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.background = 'transparent';
+                                e.currentTarget.style.color = 'var(--accent-primary)';
+                                e.currentTarget.style.transform = 'scale(1)';
+                            }}
+                        >
+                            &larr;
+                        </button>
+                        <button
+                            onClick={() => scrollCarousel('right')}
+                            className="nav-arrow-btn"
+                            aria-label="Scroll Right"
+                            style={{
+                                background: 'transparent',
+                                border: '1px solid var(--accent-primary)',
+                                color: 'var(--accent-primary)',
+                                width: '40px',
+                                height: '40px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                cursor: 'pointer',
+                                transition: 'all 0.3s ease',
+                                fontSize: '1.2rem'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.background = 'var(--accent-primary)';
+                                e.currentTarget.style.color = '#fff';
+                                e.currentTarget.style.transform = 'scale(1.1)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.background = 'transparent';
+                                e.currentTarget.style.color = 'var(--accent-primary)';
+                                e.currentTarget.style.transform = 'scale(1)';
+                            }}
+                        >
+                            &rarr;
+                        </button>
+                    </div>
                 </div>
             </section>
 
             <Footer />
+
+            <style jsx>{`
+                .product-carousel {
+                    display: flex;
+                    gap: 2rem;
+                    overflow-x: auto;
+                    padding-bottom: 2rem;
+                    scroll-behavior: smooth;
+                    scrollbar-width: none;
+                    scroll-snap-type: x mandatory;
+                }
+                .product-carousel::-webkit-scrollbar {
+                    display: none;
+                }
+                .product-carousel-item {
+                    min-width: 350px;
+                    flex: 0 0 auto;
+                    scroll-snap-align: center;
+                }
+                @media (max-width: 768px) {
+                    .product-carousel {
+                        gap: 1rem;
+                        scroll-padding: 1rem; /* Adjust snap padding */
+                    }
+                    .product-carousel-item {
+                        min-width: 85vw; /* Almost full width for mobile focus */
+                    }
+                }
+            `}</style>
         </div>
     );
 }
