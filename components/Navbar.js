@@ -387,10 +387,18 @@ const Navbar = () => {
                         text-align: center;
                     }
                     
-                    /* Hide images in mobile menu to keep it clean */
-                    .mega-header img, 
-                    .mega-header div[style*="background"] { 
-                         display: none !important; 
+                    /* Allow images in mobile menu */
+                    .mega-header img { 
+                         display: block !important; 
+                         margin: 0 auto 0.5rem auto;
+                    }
+
+                    /* For MGS and MMS containers, hide the borders in mobile to look like the MAS logo */
+                    .mega-header div[style*="border: 1px solid"] {
+                         border: none !important;
+                         background: transparent !important;
+                         display: flex !important;
+                         margin: 0 auto 0.5rem auto;
                     }
                     
                     .mega-category {
