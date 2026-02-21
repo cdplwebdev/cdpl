@@ -143,7 +143,9 @@ const Navbar = () => {
                             <div className="mega-menu-container">
                                 <div className="mega-column" style={{ borderRight: '1px solid rgba(0, 57, 166, 0.1)' }}>
                                     <Link href="/mas" onClick={handleMegaLinkClick} className={`mega-header ${pathname === '/mas' || pathname.startsWith('/products/mas') ? 'active' : ''}`} style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '1.5rem', textDecoration: 'none', cursor: 'pointer', position: 'relative', padding: '10px' }}>
-                                        <img src="/partners/masicon.png" alt="MAS" style={{ height: '30px', width: 'auto', objectFit: 'contain', position: 'relative', zIndex: '2' }} />
+                                        <div style={{ height: '30px', width: '40px', background: '#ffffff', border: '1px solid var(--team-mas)', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', zIndex: '2', overflow: 'hidden' }}>
+                                            <img src="/partners/masicon.png" alt="MAS" style={{ height: '26px', width: '36px', objectFit: 'contain' }} />
+                                        </div>
                                         <span className="mega-category" style={{ color: 'var(--team-mas)', position: 'relative', zIndex: '2' }}>Major Aerospace Systems</span>
                                         <span className="corner corner-tl"></span>
                                         <span className="corner corner-tr"></span>
@@ -196,7 +198,9 @@ const Navbar = () => {
 
                                 <div className="mega-column">
                                     <Link href="/mms" onClick={handleMegaLinkClick} className={`mega-header ${pathname === '/mms' ? 'active' : ''}`} style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '1.5rem', textDecoration: 'none', cursor: 'pointer', position: 'relative', padding: '10px' }}>
-                                        <div style={{ height: '30px', width: '40px', background: 'var(--bg-tactical)', border: '1px solid var(--team-mms)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '10px', color: 'var(--team-mms)', fontWeight: 'bold', position: 'relative', zIndex: '2' }}>MMS</div>
+                                        <div style={{ height: '30px', width: '40px', background: '#ffffff', border: '1px solid var(--team-mms)', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', zIndex: '2', overflow: 'hidden' }}>
+                                            <img src="/partners/mmsicon.png" alt="MMS" style={{ height: '26px', width: '36px', objectFit: 'contain' }} />
+                                        </div>
                                         <span className="mega-category" style={{ color: 'var(--team-mms)', position: 'relative', zIndex: '2' }}>Major Marine Systems</span>
                                         <span className="corner corner-tl"></span>
                                         <span className="corner corner-tr"></span>
