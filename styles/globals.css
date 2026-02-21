@@ -1444,7 +1444,7 @@ a:hover {
 }
 
 .mas-main-logo {
-  max-width: 350px;
+  max-width: 160px;
   width: auto;
   height: auto;
   opacity: 0;
@@ -1491,7 +1491,7 @@ a:hover {
 
 @media (max-width: 768px) {
   .mas-main-logo {
-    max-width: 240px;
+    max-width: 120px;
   }
 
   .mas-header {
@@ -2418,7 +2418,7 @@ a:hover {
   }
 
   .mas-main-logo {
-    max-width: 200px !important;
+    max-width: 100px !important;
   }
 
   .mas-hero-content {
@@ -2523,7 +2523,7 @@ a:hover {
 
   /* MAS logo smaller */
   .mas-main-logo {
-    max-width: 160px !important;
+    max-width: 80px !important;
   }
 
   /* Spec hero stats */

@@ -29,7 +29,7 @@ export default function Mas() {
                 <div className="container" style={{ width: '100%', maxWidth: 'none', margin: '0' }}>
                     <div className="mas-logo-container">
                         <img
-                            src="/partners/mas-logo.png"
+                            src="/partners/masicon.png"
                             alt="Major Aerospace Systems"
                             className="mas-main-logo"
                         />
@@ -37,8 +37,8 @@ export default function Mas() {
                 </div>
             </section>
 
-            {/* Cinematic Mission Section */}
-            <section className="mas-hero-content" style={{ marginTop: '0', padding: 'clamp(1rem, 5vh, 4rem) clamp(1.5rem, 5vw, 4rem)' }}>
+            {/* Cinematic Mission Section & Partners */}
+            <section className="mas-hero-content" style={{ marginTop: '0', padding: '1rem clamp(1.5rem, 5vw, 4rem) 2rem' }}>
                 <div className="container" style={{ padding: 0 }}>
                     <h2 style={{
                         fontSize: 'clamp(1.8rem, 5vw, 3.5rem)',
@@ -56,30 +56,28 @@ export default function Mas() {
                     <div style={{
                         display: 'grid',
                         gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                        gap: 'clamp(1.5rem, 5vw, 2.5rem)',
+                        gap: '1.5rem',
                         maxWidth: '1200px',
                         textAlign: 'left',
-                        marginBottom: '2rem'
+                        marginBottom: '1.5rem'
                     }}>
                         <div className="mission-para" style={{ borderLeft: '2px solid var(--accent-primary)', paddingLeft: '1.5rem' }}>
-                            <p style={{ fontSize: '1rem', lineHeight: '1.6', color: 'var(--text-secondary)' }}>
+                            <p style={{ fontSize: '0.95rem', lineHeight: '1.5', color: 'var(--text-secondary)' }}>
                                 <strong style={{ color: 'var(--text-primary)' }}>Major Aerospace Systems (MAS)</strong> — a Bharat-rooted global leader — stands at the forefront of innovation in aerospace and autonomous defense technology. We pioneer the design and deployment of next-generation platforms and intelligent multi-domain technologies.
                             </p>
                         </div>
                         <div className="mission-para">
-                            <p style={{ fontSize: '1rem', lineHeight: '1.6', color: 'var(--text-secondary)' }}>
+                            <p style={{ fontSize: '0.95rem', lineHeight: '1.5', color: 'var(--text-secondary)' }}>
                                 Our solutions are engineered for high-impact defense across <span style={{ color: 'var(--accent-primary)', fontWeight: '600' }}>land, sea, air, and space</span>. MAS is redefining the future of national security, enabling partners to protect sovereign interests with precision and confidence.
                             </p>
                         </div>
                     </div>
                 </div>
-            </section>
 
-            <section id="partners" className="about-section" style={{ borderTop: '1px solid var(--border-color)', padding: 'clamp(2rem, 5vh, 4rem) 0' }}>
-                <div className="container">
+                <div className="container" id="partners" style={{ borderTop: '1px solid var(--border-color)', paddingTop: '1.5rem', paddingBottom: '0' }}>
                     {/* Partner Section */}
                     <div className="partners-section" style={{ marginTop: '0' }}>
-                        <h4 style={{ textAlign: 'center', marginBottom: 'clamp(1.5rem, 4vh, 3rem)', fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--text-tertiary)', letterSpacing: '2px' }}>STRATEGIC PARTNERSHIPS</h4>
+                        <h4 style={{ textAlign: 'center', marginBottom: '1.5rem', fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--text-tertiary)', letterSpacing: '2px' }}>STRATEGIC PARTNERSHIPS</h4>
                         <div style={{ display: 'flex', justifyContent: 'center' }}>
                             <div className="partner-logo-grid" style={{
                                 display: 'flex',
