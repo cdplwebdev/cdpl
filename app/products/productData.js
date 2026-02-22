@@ -258,5 +258,25 @@ export const products = {
         galleryImages: [
             "/partners/aot.png"
         ]
+    },
+    'raven': {
+        name: "RAVEN",
+        tagline: "SIMULATOR",
+        brand: "MAS",
+        category: "SIMULATOR",
+        description: "",
+        longDescription: "",
+        heroSpecs: [],
+        featureCards: [],
+        variants: [],
+        specs: [],
+        features: [],
+        imageClass: "product-image-sim",
+        nickname: "RAVEN",
+        galleryImages: [
+            "/partners/r1.png",
+            "/partners/r2.jpeg",
+            "/partners/r3.jpeg"
+        ]
     }
 };

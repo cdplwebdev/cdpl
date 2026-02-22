@@ -379,14 +379,16 @@ export default function ProductPage() {
                     </div>
 
                     {/* Big Tech Stats Grid */}
-                    <div className="tech-stats-grid">
-                        {product.heroSpecs.map((spec: { label: string, value: string }, i: number) => (
-                            <div key={i} className="tech-stat-item">
-                                <span className="tech-stat-value">{spec.value}</span>
-                                <span className="tech-stat-label">{spec.label}</span>
-                            </div>
-                        ))}
-                    </div>
+                    {product.heroSpecs && product.heroSpecs.length > 0 && (
+                        <div className="tech-stats-grid">
+                            {product.heroSpecs.map((spec: { label: string, value: string }, i: number) => (
+                                <div key={i} className="tech-stat-item">
+                                    <span className="tech-stat-value">{spec.value}</span>
+                                    <span className="tech-stat-label">{spec.label}</span>
+                                </div>
+                            ))}
+                        </div>
+                    )}
                 </div>
             </section>
 

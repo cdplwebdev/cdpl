@@ -112,6 +112,16 @@ export default function Mas() {
                         <div className="product-carousel" ref={carouselRef}>
                             {[
                                 {
+                                    id: 'raven',
+                                    name: 'RAVEN',
+                                    nickname: 'RAVEN',
+                                    type: 'SIMULATOR',
+                                    tagline: 'SIMULATOR',
+                                    desc: '',
+                                    imgClass: 'product-image-sim',
+                                    link: '/products/raven'
+                                },
+                                {
                                     id: 'bard',
                                     name: 'BARD Family',
                                     nickname: 'SENTINEL',
@@ -147,7 +157,7 @@ export default function Mas() {
                                     nickname: 'HYDRA V4',
                                     type: 'KINETIC INTERCEPT',
                                     tagline: 'LOITERING MUNITION',
-                                    desc: 'Attritable, high-performance platform (7-15") engineered for precision kinetic intercept and heavy payload strike.',
+                                    desc: 'Attritable, high-performance platform (7-15\") engineered for precision kinetic intercept and heavy payload strike.',
                                     imgClass: 'product-image-hydra',
                                     link: '/products/stinger'
                                 },

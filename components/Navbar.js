@@ -153,6 +153,10 @@ const Navbar = () => {
                                         <span className="corner corner-br"></span>
                                     </Link>
                                     <div className="mega-links">
+                                        <Link href="/products/raven" onClick={handleMegaLinkClick} className="mega-link-item team-mas">
+                                            <span className="link-title">RAVEN</span>
+                                            <span className="link-desc">Simulator</span>
+                                        </Link>
                                         <Link href="/products/bard" onClick={handleMegaLinkClick} className="mega-link-item team-mas">
                                             <span className="link-title">BARD </span>
                                             <span className="link-desc">Strategic Quad ISR</span>
