@@ -156,9 +156,7 @@ export const products = {
         imageClass: "product-image-sim",
         nickname: "SIMULATE",
         galleryImages: [
-            "/partners/placeholder1.jpg",
-            "/partners/placeholder2.jpg",
-            "/partners/placeholder3.jpg"
+            "/partners/horizonfpv.jpeg"
         ]
     },
     'stinger': {
@@ -209,9 +207,7 @@ export const products = {
         imageClass: "product-image-hydra",
         nickname: "HYDRA V4",
         galleryImages: [
-            "/partners/placeholder1.jpg",
-            "/partners/placeholder2.jpg",
-            "/partners/placeholder3.jpg"
+            "/partners/stinger.jpeg"
         ]
     },
     'aot': {
@@ -219,8 +215,8 @@ export const products = {
         tagline: "TACTICAL TRAINER UAS · PROP GUARDED",
         brand: "MAS",
         category: "TRAINER",
-        description: "Safe and durable tactical trainer UAS for entry-level pilots and observation training.",
-        longDescription: "The AOT 7-inch variant is the gold standard for pilot training. Featuring integrated prop guards and a stable analog FPV system, it allows trainees to master flight dynamics with minimal risk to the equipment or personnel.",
+        description: "Attritable Observation Trainer for tactical maneuvering and observation readiness.",
+        longDescription: "The AOT 7-inch variant provides a responsive flight envelope for mastering complex tactical maneuvers and close-proximity observation fundamentals.",
         heroSpecs: [
             { label: "Endurance", value: "30m" },
             { label: "Range", value: "3km" },

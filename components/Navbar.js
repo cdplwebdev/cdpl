@@ -154,7 +154,7 @@ const Navbar = () => {
                                     </Link>
                                     <div className="mega-links">
                                         <Link href="/products/bard" onClick={handleMegaLinkClick} className="mega-link-item team-mas">
-                                            <span className="link-title">BARD Family</span>
+                                            <span className="link-title">BARD </span>
                                             <span className="link-desc">Strategic Quad ISR</span>
                                         </Link>
                                         <Link href="/products/horizon-vtol" onClick={handleMegaLinkClick} className="mega-link-item team-mas">
@@ -166,7 +166,7 @@ const Navbar = () => {
                                             <span className="link-desc">Advanced Trainer</span>
                                         </Link>
                                         <Link href="/products/stinger" onClick={handleMegaLinkClick} className="mega-link-item team-mas">
-                                            <span className="link-title">STINGER Family</span>
+                                            <span className="link-title">STINGER </span>
                                             <span className="link-desc">Tactical Strike</span>
                                         </Link>
                                         <Link href="/products/aot" onClick={handleMegaLinkClick} className="mega-link-item team-mas">

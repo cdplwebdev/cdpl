@@ -176,11 +176,10 @@ export default function ProductPage() {
                     <div className="container bard-context-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(2rem, 6vw, 4rem)', alignItems: 'center', padding: 'clamp(4rem, 10vh, 8rem) 1.5rem' }}>
                         <div>
                             <span style={{ color: 'var(--accent-primary)', letterSpacing: '3px', fontSize: '0.8rem', fontWeight: '700' }}>[ MISSION_READY ]</span>
-                            <h2 style={{ fontSize: 'clamp(1.8rem, 6vw, 4rem)', fontWeight: '800', margin: '1.5rem 0', lineHeight: '1.1', color: 'var(--text-primary)' }}>CINEMATIC SURVEILLANCE</h2>
+                            <h2 style={{ fontSize: 'clamp(1.8rem, 6vw, 4rem)', fontWeight: '800', margin: '1.5rem 0', lineHeight: '1.1', color: 'var(--text-primary)' }}>TACTICAL ISR</h2>
                             <p style={{ color: 'var(--text-secondary)', fontSize: 'clamp(0.95rem, 2.5vw, 1.2rem)', marginBottom: '3rem' }}>
                                 Every system is a modular node in a vast, autonomous network. {product.description}
                             </p>
-                            <Link href="/contact" className="btn btn-primary">Deployment Strategy</Link>
                         </div>
                         <div style={{ position: 'relative' }}>
                             <div className="gallery-frame" style={{ aspectRatio: '16/10', border: '1px solid rgba(0,0,0,0.1)' }}>
@@ -458,7 +457,7 @@ export default function ProductPage() {
                 </section>
             )}
 
-            {/* Mission Profile Section */}
+            {/* Mission Profile Section 
             <section className="about-section blueprint-bg reveal-section">
                 <div className="container">
                     <div className="about-content" style={{ gridTemplateColumns: '1.2fr 0.8fr' }}>
@@ -495,7 +494,7 @@ export default function ProductPage() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* Variant Breakdown Section */}
             {product.variants && product.variants.length > 0 && (
