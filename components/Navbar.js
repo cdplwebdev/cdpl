@@ -64,6 +64,7 @@ const Navbar = () => {
     const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const closeTimerRef = useRef(null);
     const router = useRouter();
     const pathname = usePathname();
     const isHomePage = pathname === '/';
@@ -96,6 +97,15 @@ const Navbar = () => {
         setIsMegaMenuOpen(false);
     }, [pathname]);
 
+    const openMegaMenu = () => {
+        if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+        setIsMegaMenuOpen(true);
+    };
+
+    const closeMegaMenuDelayed = () => {
+        closeTimerRef.current = setTimeout(() => setIsMegaMenuOpen(false), 150);
+    };
+
     const handleMegaLinkClick = () => {
         setIsMegaMenuOpen(false);
         setIsMobileMenuOpen(false);
@@ -104,7 +114,7 @@ const Navbar = () => {
     return (
         <nav
             className={`navbar ${scrolled ? 'scrolled' : ''} ${!hasDarkHero ? 'solid' : ''} ${isMobileMenuOpen ? 'mobile-open' : ''} ${isMegaMenuOpen ? 'mega-open' : ''}`}
-            onMouseLeave={() => setIsMegaMenuOpen(false)}
+            onMouseLeave={closeMegaMenuDelayed}
         >
             <div className="container nav-container">
                 <Link href="/" className="logo-container" onClick={() => setIsMegaMenuOpen(false)}>
@@ -136,7 +146,8 @@ const Navbar = () => {
                     </div>
                     <div
                         className="dropdown mega-dropdown"
-                        onMouseEnter={() => setIsMegaMenuOpen(true)}
+                        onMouseEnter={openMegaMenu}
+                        onMouseLeave={closeMegaMenuDelayed}
                     >
                         <HackerLink href="/#products" text="Products" isActive={pathname.startsWith('/products') || pathname === '/mas' || pathname === '/mgs' || pathname === '/mms'} />
                         <div className={`mega-menu ${isMegaMenuOpen ? 'active' : ''}`}>
