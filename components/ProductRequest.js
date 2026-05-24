@@ -14,7 +14,7 @@ export default function ProductRequest({ productName }) {
         setStatus('TRANSMITTING...');
         
         const formData = new FormData(e.target);
-        formData.append("access_key", "21d20e0a-b1c6-4345-ba1e-95bb42b5b932");
+        formData.append("access_key", "f04a621c-a8ea-4d3f-96e2-e9937d82be9a");
         formData.append("subject", `New Product Request: ${productName}`);
         formData.append("product_requested", productName);
 
@@ -81,11 +81,10 @@ export default function ProductRequest({ productName }) {
                         borderRadius: '8px',
                         animation: 'slideDown 0.3s cubic-bezier(0.23, 1, 0.32, 1)'
                     }}>
-                        <h4 style={{ fontSize: '0.75rem', color: 'var(--accent-primary)', marginBottom: '1.5rem', letterSpacing: '2px', fontFamily: 'var(--font-mono)' }}>[ RFQ_SUBMISSION ]</h4>
                         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
                             <select name="requestType" required style={{ width: '100%', padding: '0.8rem', border: '1px solid #ddd', borderRadius: '4px', background: '#f8fafc', fontWeight: 'bold', fontSize: '0.85rem' }}>
                                 <option value="quotation">Request Quotation</option>
-                                <option value="document">Request / Download Document</option>
+                                <option value="document">Request Document</option>
                             </select>
                             <input type="text" name="name" placeholder="NAME" required style={{ width: '100%', padding: '0.8rem', border: '1px solid #ddd', borderRadius: '4px' }} />
                             <input type="email" name="email" placeholder="EMAIL ID" required style={{ width: '100%', padding: '0.8rem', border: '1px solid #ddd', borderRadius: '4px' }} />
