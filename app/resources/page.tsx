@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import Link from 'next/link';
@@ -47,16 +47,6 @@ export default function ResourcesPage() {
         };
     }, [activeGallery, currentImgIndex]);
 
-    const nextSlide = () => {
-        const items = activeGallery === 'training' ? trainingItems : [];
-        setCurrentImgIndex((prev) => (prev + 1) % items.length);
-    };
-
-    const prevSlide = () => {
-        const items = activeGallery === 'training' ? trainingItems : [];
-        setCurrentImgIndex((prev) => (prev - 1 + items.length) % items.length);
-    };
-
     const newsData = [
         {
             id: 1,
@@ -66,14 +56,6 @@ export default function ResourcesPage() {
             excerpt: "Chakravyuha Dynamics' B.A.R.D. system was demonstrated at Exercise Topchi 2026, showcasing autonomous aerial surveillance capabilities to the Indian Armed Forces.",
             link: "https://www.youtube.com/watch?v=PWX3_uDB7z4"
         }
-    ];
-
-    const downloads = [
-        { title: "BARD V2.0 System Overview", type: "PDF", size: "2.8 MB" },
-        { title: "RAVEN Simulator Technical Manual", type: "PDF", size: "4.2 MB" },
-        { title: "HORIZON VTOL Deployment Specs", type: "PDF", size: "2.5 MB" },
-        { title: "Tactical ISR Integration Guide", type: "PDF", size: "1.5 MB" },
-        { title: "CDPL Corporate Capability Document", type: "PDF", size: "3.4 MB" }
     ];
 
     const trainingItems = [

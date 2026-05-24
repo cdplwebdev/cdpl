@@ -1,8 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-
-    export default function Hero() {
+export default function Hero() {
 
     return (
         <section id="home" className="hero-section">

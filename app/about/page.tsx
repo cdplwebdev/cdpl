@@ -140,7 +140,6 @@ export default function AboutPage() {
             </section>
 
             {/* Leadership Section */}
-            {/* Leadership Section */}
             <section id="leadership" style={{ padding: 'clamp(4rem, 8vh, 8rem) 0', background: '#f8fafc', borderTop: '1px solid #f1f5f9' }}>
                 <div className="container">
                     <div className="leadership-title-section" style={{ textAlign: 'center', marginBottom: 'clamp(2.5rem, 6vh, 6rem)' }}>

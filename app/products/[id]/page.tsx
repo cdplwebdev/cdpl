@@ -240,27 +240,7 @@ export default function ProductPage() {
                     </div>
                 </section>
 
-                {/* Tactical Capabilities Matrix
-                <section className="reveal-section" style={{ background: '#fff', padding: 'clamp(4rem, 8vh, 10rem) 0', borderTop: '1px solid #eee' }}>
-                    <div className="container">
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'clamp(3rem, 6vw, 8rem)' }}>
-                            <div>
-                                <h4 style={{ fontSize: 'clamp(1.8rem, 5vw, 3.5rem)', fontWeight: '800', marginBottom: '2rem', lineHeight: '1.1', color: 'var(--text-primary)' }}>SOFTWARE-DEFINED AUTONOMY</h4>
-                                <p style={{ color: 'var(--text-secondary)', fontSize: 'clamp(0.95rem, 2vw, 1.2rem)', lineHeight: '1.6' }}>
-                                    Lattice-powered edge processing enables Bard to identify targets, categorize threats, and execute mission-critical decisions without human intervention.
-                                </p>
-                            </div>
-                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2.5rem' }}>
-                                {product.featureCards.map((card: any, i: number) => (
-                                    <div key={i}>
-                                        <div style={{ color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)', fontSize: '0.7rem', marginBottom: '1.5rem', letterSpacing: '2px' }}>[ 0{i + 1} // {card.title.toUpperCase()} ]</div>
-                                        <p style={{ color: 'var(--text-tertiary)', fontSize: '0.9rem' }}>{card.description}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </section> */}
+                {/* Tactical Capabilities Matrix commented block removed */}
 
                 <Footer />
 
@@ -465,45 +445,6 @@ export default function ProductPage() {
                     </div>
                 </section>
             )}
-
-            {/* Mission Profile Section 
-            <section className="about-section blueprint-bg reveal-section">
-                <div className="container">
-                    <div className="about-content" style={{ gridTemplateColumns: '1.2fr 0.8fr' }}>
-                        <div className="about-text">
-                            <h4>MISSION PROFILE</h4>
-                            <p style={{ fontSize: '1.5rem', color: 'var(--text-primary)', fontWeight: '600', lineHeight: '1.3' }}>
-                                {product.description}
-                            </p>
-                            <p style={{ marginTop: '2rem', fontSize: '1.1rem' }}>
-                                {product.longDescription}
-                            </p>
-
-                            <div style={{ marginTop: '4rem' }}>
-                                <Link href="/contact" className="btn btn-primary">Inquire for Deployment</Link>
-                            </div>
-                        </div>
-
-                        <div className="specs-list-panel">
-                            <h4 className="spec-category-title">SYSTEM DATA</h4>
-                            <div style={{ display: 'flex', flexDirection: 'column' }}>
-                                {product.specs.map((spec: { label: string, value: string }, i: number) => (
-                                    <div key={i} className="spec-list-item">
-                                        <span className="spec-label">{spec.label}</span>
-                                        <span className="spec-value">{spec.value}</span>
-                                    </div>
-                                ))}
-                            </div>
-
-                            <div className="product-card" style={{ marginTop: '3rem', height: '250px' }}>
-                                <div className={`product-image ${product.imageClass}`} style={{ height: '100%' }}>
-                                    <span style={{ color: 'rgba(0,0,0,0.1)', fontSize: '1.5rem', fontWeight: '800' }}>[ SCHEMATIC ]</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> */}
 
             {/* Variant Breakdown Section */}
             {product.variants && product.variants.length > 0 && (

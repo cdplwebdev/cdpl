@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
-import Link from 'next/link';
 import GlobeMap from '../../components/GlobeMap';
 
 export default function CareersPage() {
@@ -70,40 +69,6 @@ export default function CareersPage() {
         { title: 'National Commitment', desc: 'We are building India\'s sovereign defense capability — that responsibility drives us.' },
     ];
 
-    const jobOpenings = [
-        {
-            id: 1,
-            title: 'UAV Systems Engineer',
-            division: 'MAS · Aerospace',
-            location: 'Kanchipuram, TN',
-            type: 'Full-Time',
-            desc: 'Lead design and integration of next-generation flight control systems for VTOL and STOL platforms.',
-        },
-        {
-            id: 2,
-            title: 'Embedded Systems Developer',
-            division: 'Tactical Computing',
-            location: 'Kanchipuram, TN',
-            type: 'Full-Time',
-            desc: 'Develop low-latency, mission-critical firmware for autonomous navigation and edge-AI processing.',
-        },
-        {
-            id: 3,
-            title: 'Composite Structures Specialist',
-            division: 'Manufacturing',
-            location: 'Kanchipuram, TN',
-            type: 'Full-Time',
-            desc: 'Work with advanced carbon fibre and composite materials to optimise airframe strength-to-weight ratio.',
-        },
-        {
-            id: 4,
-            title: 'Ground Systems Architect',
-            division: 'MGS · Ground',
-            location: 'Remote / Hybrid',
-            type: 'Full-Time',
-            desc: 'Design autonomous navigation stacks for tactical ground vehicles and robotic combat systems.',
-        },
-    ];
 
     return (
         <div className="careers-page" style={{ background: '#fff', color: 'var(--text-primary)', overflowX: 'hidden' }}>
