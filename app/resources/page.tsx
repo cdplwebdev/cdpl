@@ -32,8 +32,14 @@ export default function ResourcesPage() {
         const handleKeyDown = (e: KeyboardEvent) => {
             if (!activeGallery) return;
             if (e.key === 'Escape') setActiveGallery(null);
-            if (e.key === 'ArrowRight') nextSlide();
-            if (e.key === 'ArrowLeft') prevSlide();
+            if (e.key === 'ArrowRight') {
+                const items = activeGallery === 'training' ? trainingItems : [];
+                setCurrentImgIndex((prev) => (prev + 1) % items.length);
+            }
+            if (e.key === 'ArrowLeft') {
+                const items = activeGallery === 'training' ? trainingItems : [];
+                setCurrentImgIndex((prev) => (prev - 1 + items.length) % items.length);
+            }
         };
 
         window.addEventListener('keydown', handleKeyDown);
